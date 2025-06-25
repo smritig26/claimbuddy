@@ -1,0 +1,22 @@
+{% extends 'pams/base.html' %}
+{% block title %}Add Patient{% endblock %}
+
+{% block content %}
+<section class="section">
+  <div class="section-header"><h1>Add New Patient</h1></div>
+  <div class="section-body">
+    <form method="post">
+      {% csrf_token %}
+      <div class="card">
+        <div class="card-body">
+          {{ form.as_p }}
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-primary">Add Patient</button>
+          <a href="{% url 'patient-list' %}" class="btn btn-secondary">Back</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}

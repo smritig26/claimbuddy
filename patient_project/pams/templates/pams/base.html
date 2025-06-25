@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Dashboard{% endblock %}</title>
+
+  <!-- Stisla Styles -->
+  <link rel="stylesheet" href="{% static 'assets/modules/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/modules/fontawesome/css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/components.css' %}">
+</head>
+<body>
+
+  <div id="app">
+    <div class="main-wrapper">
+
+      <!-- Navbar -->
+      <div class="navbar-bg"></div>
+      <nav class="navbar navbar-expand-lg main-navbar">
+        <a href="#" class="navbar-brand sidebar-gone-hide" style="margin: 0 auto; display: block; text-align: center;">
+            Patient Data Management
+          </a>
+          
+      </nav>
+
+      <!-- Sidebar -->
+      <div class="main-sidebar sidebar-style-2">
+        <aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="#">Patients</a>
+          </div>
+          <ul class="sidebar-menu">
+            <li class="menu-header" style="text-align: center; font-size: larger; color: black;">Dashboard</li>
+            <li><a href="#" class="nav-link"><i class="fas fa-user"></i><span>Patients Data</span></a></li>
+          </ul>
+        </aside>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        {% block content %}{% endblock %}
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="{% static 'assets/modules/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/modules/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assets/js/scripts.js' %}"></script>
+</body>
+</html>
